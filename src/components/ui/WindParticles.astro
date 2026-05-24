@@ -1,0 +1,185 @@
+---
+// Wind particle animation for Aetheris hero background.
+// Uses a Perlin noise–driven velocity field to simulate flowing wind streamlines.
+// Respects prefers-reduced-motion and reduces particle count on mobile.
+---
+
+<canvas id="wind-canvas" aria-hidden="true"></canvas>
+
+<style>
+  #wind-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+  }
+</style>
+
+<script>
+  (() => {
+    const canvas = document.getElementById('wind-canvas') as HTMLCanvasElement | null;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Respect reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // --- Perlin noise (2D, inline) ---
+    // Based on Ken Perlin's improved noise, adapted for JS
+    const perm = new Uint8Array(512);
+    const p = new Uint8Array(256);
+    for (let i = 0; i < 256; i++) p[i] = i;
+    for (let i = 255; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [p[i], p[j]] = [p[j], p[i]];
+    }
+    for (let i = 0; i < 512; i++) perm[i] = p[i & 255];
+
+    function fade(t: number) { return t * t * t * (t * (t * 6 - 15) + 10); }
+    function lerp(a: number, b: number, t: number) { return a + t * (b - a); }
+    function grad(hash: number, x: number, y: number) {
+      const h = hash & 3;
+      const u = h < 2 ? x : y;
+      const v = h < 2 ? y : x;
+      return ((h & 1) ? -u : u) + ((h & 2) ? -v : v);
+    }
+    function noise(x: number, y: number) {
+      const X = Math.floor(x) & 255, Y = Math.floor(y) & 255;
+      x -= Math.floor(x); y -= Math.floor(y);
+      const u = fade(x), v = fade(y);
+      const a = perm[X] + Y, b = perm[X + 1] + Y;
+      return lerp(
+        lerp(grad(perm[a], x, y), grad(perm[b], x - 1, y), u),
+        lerp(grad(perm[a + 1], x, y - 1), grad(perm[b + 1], x - 1, y - 1), u),
+        v
+      );
+    }
+
+    // --- Setup ---
+    const isMobile = window.innerWidth < 768;
+    const PARTICLE_COUNT = isMobile ? 200 : 500;
+    const SPEED = 1.4;
+    const NOISE_SCALE = 0.0025;
+    const TRAIL_LENGTH = isMobile ? 28 : 40;
+    const TIME_SCALE = 0.00018;
+
+    // Aetheris brand colors: primary blue + accent purple, low opacity
+    const COLORS = [
+      'rgba(1, 97, 239,',   // primary blue
+      'rgba(56, 139, 253,', // lighter blue
+      'rgba(109, 40, 217,', // accent purple
+      'rgba(99, 179, 255,', // sky blue
+    ];
+
+    interface Particle {
+      x: number; y: number;
+      vx: number; vy: number;
+      life: number; maxLife: number;
+      color: string; size: number;
+      trail: Array<{x: number; y: number}>;
+    }
+
+    let W = 0, H = 0;
+    let particles: Particle[] = [];
+    let animId: number;
+    let t = 0;
+
+    function resize() {
+      W = canvas!.width = canvas!.offsetWidth;
+      H = canvas!.height = canvas!.offsetHeight;
+    }
+
+    function spawn(): Particle {
+      const maxLife = 120 + Math.random() * 200;
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: 0, vy: 0,
+        life: Math.floor(Math.random() * maxLife),
+        maxLife,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        size: 0.6 + Math.random() * 1.0,
+        trail: [],
+      };
+    }
+
+    function init() {
+      particles = Array.from({ length: PARTICLE_COUNT }, spawn);
+    }
+
+    function step() {
+      t += TIME_SCALE;
+
+      // Fade trail: semi-transparent dark overlay
+      ctx!.fillStyle = 'rgba(3, 6, 32, 0.18)';
+      ctx!.fillRect(0, 0, W, H);
+
+      for (const p of particles) {
+        // Derive velocity from noise field (two offset samples for x and y)
+        const angle = noise(p.x * NOISE_SCALE + t, p.y * NOISE_SCALE + t) * Math.PI * 4;
+        p.vx += (Math.cos(angle) - p.vx) * 0.12;
+        p.vy += (Math.sin(angle) - p.vy) * 0.12;
+
+        const mag = Math.sqrt(p.vx * p.vx + p.vy * p.vy) || 1;
+        p.x += (p.vx / mag) * SPEED;
+        p.y += (p.vy / mag) * SPEED;
+
+        // Store trail point
+        p.trail.push({ x: p.x, y: p.y });
+        if (p.trail.length > TRAIL_LENGTH) p.trail.shift();
+
+        p.life++;
+
+        // Wrap edges
+        if (p.x < -5) p.x = W + 5;
+        if (p.x > W + 5) p.x = -5;
+        if (p.y < -5) p.y = H + 5;
+        if (p.y > H + 5) p.y = -5;
+
+        // Draw trail
+        if (p.trail.length > 2) {
+          const alpha = Math.min(1, p.life / 40) * (1 - p.life / p.maxLife);
+          ctx!.beginPath();
+          ctx!.moveTo(p.trail[0].x, p.trail[0].y);
+          for (let i = 1; i < p.trail.length; i++) {
+            ctx!.lineTo(p.trail[i].x, p.trail[i].y);
+          }
+          ctx!.strokeStyle = `${p.color}${(alpha * 0.7).toFixed(3)})`;
+          ctx!.lineWidth = p.size;
+          ctx!.lineCap = 'round';
+          ctx!.stroke();
+        }
+
+        // Respawn dead particles
+        if (p.life >= p.maxLife) {
+          const fresh = spawn();
+          p.x = fresh.x; p.y = fresh.y;
+          p.vx = 0; p.vy = 0;
+          p.life = 0; p.maxLife = fresh.maxLife;
+          p.color = fresh.color; p.size = fresh.size;
+          p.trail = [];
+        }
+      }
+
+      animId = requestAnimationFrame(step);
+    }
+
+    const ro = new ResizeObserver(() => { resize(); });
+    ro.observe(canvas);
+
+    resize();
+    init();
+    step();
+
+    // Pause when tab hidden, resume on show
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancelAnimationFrame(animId);
+      else step();
+    });
+  })();
+</script>

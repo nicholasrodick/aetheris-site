@@ -1,13 +1,11 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About',
 };
 ---
 
@@ -15,213 +13,116 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="About us"
+    tagline="About Aetheris"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: 'https://images.unsplash.com/photo-1504608524841-42584120d1a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Storm cell over open landscape',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+      Weather intelligence<br />
+      <span class="text-accent dark:text-blue-400">built for real decisions</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      Aetheris is a weather intelligence consultancy and thought leadership platform. We help weather tech founders
+      go to market and help business operators turn forecast uncertainty into confident, defensible decisions.
     </Fragment>
   </Hero>
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
+  <!-- Core Thesis ******************* -->
 
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    title="The Aetheris thesis"
+    subtitle="Forecast models are being commoditized. ECMWF, GFS, GraphCast, Pangu-Weather — the accuracy gap between providers is narrowing. The new competitive edge is upstream of the model."
     items={[
       {
-        title: 'Customer-centric approach',
+        title: 'Data overload is the real problem',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          'Modern forecast suites produce probabilistic output across hundreds of variables and dozens of ensemble members. More data does not automatically mean better decisions.',
       },
       {
-        title: 'Constant Improvement',
+        title: 'Confidence > certainty',
         description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+          'The right question isn\'t "what\'s the forecast?" — it\'s "how confident should I be, and what\'s the cost of being wrong in each direction?" Forecast skill scores don\'t answer that.',
       },
       {
-        title: 'Ethical Practices',
+        title: 'Signal extraction is the new moat',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'Aetheris applies forecast confidence principles to extract actionable signal — turning ensemble spread and model disagreement from noise into a business intelligence layer.',
       },
     ]}
   />
 
-  <!-- Steps2 Widget ****************** -->
+  <!-- Values ************************ -->
 
   <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    title="How we work"
     isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
+        title: 'Technically credible, strategically accessible',
+        description:
+          'We don\'t dumb down the meteorology — we translate it. The goal is decision-makers who understand enough to act, not enough to second-guess the models.',
+        icon: 'tabler:school',
       },
       {
-        title: 'Positive customer feedback and reviews',
+        title: 'Publish when it\'s worth saying',
         description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
+          'No content calendar. The blog publishes deep-dives on the uncertainty thesis and live event commentary when a weather event illustrates something worth learning.',
+        icon: 'tabler:writing',
       },
       {
-        title: 'Awards and recognition as industry experts',
+        title: 'Hands-on, not just advisory',
         description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
+          'For consulting clients this means real product work — architecture decisions, GTM decks, positioning workshops — not just frameworks and slide decks.',
+        icon: 'tabler:tool',
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Dual audience ***************** -->
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
+    title="Two audiences, one platform"
+    tagline="Who we serve"
     columns={2}
     items={[
       {
-        title: 'Chat with us',
+        title: 'Weather professionals',
         description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
+          'For founders and product teams already in the space. Aetheris provides the GTM, positioning, and advisory layer to complement deep technical expertise — helping you communicate forecast value to buyers who think in business risk.',
+        icon: 'tabler:cloud-storm',
       },
       {
-        title: 'Call us',
+        title: 'Non-weather founders & operators',
         description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
+          'For businesses where weather materially impacts operations — prediction markets, snow removal, utilities, travel. Aetheris translates the atmospheric science into decision frameworks you can actually use.',
+        icon: 'tabler:building-store',
+      },
+    ]}
+  />
+
+  <!-- Contact CTA ******************* -->
+
+  <Features2
+    title="Get in touch"
+    tagline="Work with us"
+    columns={2}
+    items={[
+      {
+        title: 'Start a conversation',
+        description:
+          'Have a weather tech product, a weather-sensitive business, or a forecast problem you can\'t quite frame? Send a note — first conversation is always diagnosis, no pitch.',
+        icon: 'tabler:messages',
+        callToAction: { text: 'Contact us', href: '/contact' },
+      },
+      {
+        title: 'Read the thinking',
+        description:
+          'Not ready to talk yet? The blog is the best way to understand how Aetheris approaches weather intelligence — technically rigorous, strategically grounded.',
+        icon: 'tabler:book',
+        callToAction: { text: 'Go to blog', href: '/blog' },
       },
     ]}
   />
