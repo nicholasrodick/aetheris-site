@@ -1,5 +1,5 @@
-site:
-  name: Aetheris
+﻿site:
+  name: AetherisWx
   site: 'https://aetherioswx.com'
   base: '/'
   trailingSlash: false
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Aetheris
-    template: '%s — Aetheris'
+    default: AetherisWx
+    template: '%s — AetherisWx'
   description: "Weather intelligence consulting for founders and decision-makers. Turning model overload into confident action through forecast confidence science."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Aetheris
+    site_name: AetherisWx
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@aetheris'
-    site: '@aetheris'
+    handle: '@AetherisWx'
+    site: '@AetherisWx'
     cardType: summary_large_image
 
 i18n:

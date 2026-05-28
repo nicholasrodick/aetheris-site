@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+﻿import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -46,7 +46,7 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Aetheris',
+      title: 'AetherisWx',
       links: [
         { text: 'Services', href: getPermalink('/services') },
         { text: 'About', href: getPermalink('/about') },
@@ -81,6 +81,6 @@ export const footerData = {
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-    &copy; ${new Date().getFullYear()} Aetheris. All rights reserved.
+    &copy; ${new Date().getFullYear()} AetherisWx. All rights reserved.
   `,
 };
