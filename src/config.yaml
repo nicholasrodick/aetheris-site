@@ -1,6 +1,6 @@
 ﻿site:
   name: AetherisWx
-  site: 'https://aetherioswx.com'
+  site: 'https://aetheriswx.com'
   base: '/'
   trailingSlash: false
 
