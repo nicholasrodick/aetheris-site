@@ -1,11 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
-  <rect width="128" height="128" rx="24" fill="#0c1a2e"/>
-  <!-- Outer ring -->
-  <path d="M64 18 A46 46 0 1 1 18 64" stroke="#38bdf8" stroke-width="10" stroke-linecap="round" fill="none"/>
-  <!-- Middle ring -->
-  <path d="M64 34 A30 30 0 1 1 34 64" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round" fill="none"/>
-  <!-- Inner ring -->
-  <path d="M64 50 A14 14 0 1 1 50 64" stroke="#e0f2fe" stroke-width="6" stroke-linecap="round" fill="none"/>
-  <!-- Center dot -->
-  <circle cx="64" cy="64" r="5" fill="#ffffff"/>
+  <rect width="128" height="128" rx="20" fill="#0c1a2e"/>
+  <!-- Candle 1 - down (red), left -->
+  <line x1="30" y1="22" x2="30" y2="35" stroke="#f87171" stroke-width="4" stroke-linecap="round"/>
+  <rect x="22" y="35" width="16" height="28" rx="2" fill="#f87171"/>
+  <line x1="30" y1="63" x2="30" y2="75" stroke="#f87171" stroke-width="4" stroke-linecap="round"/>
+  <!-- Candle 2 - up (green), middle -->
+  <line x1="64" y1="30" x2="64" y2="45" stroke="#4ade80" stroke-width="4" stroke-linecap="round"/>
+  <rect x="56" y="45" width="16" height="36" rx="2" fill="#4ade80"/>
+  <line x1="64" y1="81" x2="64" y2="95" stroke="#4ade80" stroke-width="4" stroke-linecap="round"/>
+  <!-- Candle 3 - up (green), right, tallest -->
+  <line x1="98" y1="18" x2="98" y2="32" stroke="#4ade80" stroke-width="4" stroke-linecap="round"/>
+  <rect x="90" y="32" width="16" height="48" rx="2" fill="#4ade80"/>
+  <line x1="98" y1="80" x2="98" y2="100" stroke="#4ade80" stroke-width="4" stroke-linecap="round"/>
+  <!-- Baseline -->
+  <line x1="14" y1="112" x2="114" y2="112" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
 </svg>
