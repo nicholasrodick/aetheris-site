@@ -1,0 +1,208 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Services — Aetheris',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Services"
+    title="From Weather Data to Business-Ready Products"
+    subtitle="I work with weather startups and decision-makers at every stage — from early-stage product thinking to go-to-market execution and ongoing advisory. Every engagement is scoped to what you actually need."
+    actions={[{ variant: 'primary', text: "Let's Talk", href: '/contact', icon: 'tabler:arrow-right' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Weather data and analysis',
+    }}
+  />
+
+  <!-- Features2 Widget — Three service areas ************** -->
+
+  <Features2
+    title="Three Ways I Can Help"
+    subtitle="Most clients combine elements across all three. We'll figure out what makes sense for your situation during the discovery call."
+    columns={3}
+    items={[
+      {
+        title: 'Product Consulting',
+        description:
+          'For weather tech founders building something new. I help you scope, validate, and build products that solve a real problem in a way customers can understand and act on. Hands-on, embedded work — not just advice from the sidelines.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Go-to-Market Strategy',
+        description:
+          "Positioning and messaging for technically complex weather products. I help you answer the question your customers are really asking: 'Why does this forecast matter to me right now?' — and build a sales motion around the answer.",
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Advisory',
+        description:
+          'A technical sounding board for leadership teams navigating weather exposure, data strategy, or the emerging AI forecasting landscape. Structured as a retainer or on-demand depending on what fits.',
+        icon: 'tabler:messages',
+      },
+    ]}
+  />
+
+  <!-- Content Widget — Who I work with **************** -->
+
+  <Content
+    isReversed
+    tagline="Who I Work With"
+    title="Pre-Seed to Series A, and Decision-Makers in Between"
+    items={[
+      {
+        title: 'Early-Stage Weather Startups',
+        description:
+          'You have a technology and a thesis. You need help turning it into a product someone will pay for and a story someone will fund.',
+        icon: 'tabler:seedling',
+      },
+      {
+        title: 'Growth-Stage Companies',
+        description:
+          "Your product works. Now you need to scale distribution, sharpen positioning, or navigate a new market vertical — and you need a partner who understands both the science and the strategy.",
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Non-Weather Organizations',
+        description:
+          "Operations, finance, or strategy teams who deal with significant weather exposure but don't have meteorological expertise in-house. I translate the atmosphere into decisions your team can act on.",
+        icon: 'tabler:building-skyscraper',
+      },
+      {
+        title: 'Open to Interesting Problems',
+        description:
+          "If you're working on something compelling at the intersection of weather science and real-world decisions, I'm interested. Reach out and tell me what you're building.",
+        icon: 'tabler:bulb',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-4.0.3&auto=format&fit=crop&w=2002&q=80',
+      alt: 'Collaboration',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The right fit matters</h3>
+      I'll tell you quickly if I can help and what a realistic outcome looks like. If it's not a fit, I'll say so — and often point you toward someone who is.
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget — What to expect **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Focused Engagements',
+        description:
+          'I take on a limited number of projects at a time to give each one real attention. You get me — not a junior associate who has to be briefed every meeting.',
+        icon: 'tabler:focus',
+      },
+      {
+        title: 'Honest Scoping',
+        description:
+          "No inflated deliverables, no padded timelines. I'll tell you what's achievable and what's not before we start.",
+        icon: 'tabler:checklist',
+      },
+      {
+        title: 'No Hard Sell',
+        description:
+          "This isn't a sales process — it's a conversation about whether there's a fit. If there is, we'll both know it.",
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Flexible Structure',
+        description:
+          'Hands-on product work, pure advisory, or something in between — the engagement model matches what you need, not a standard package.',
+        icon: 'tabler:adjustments',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Working together',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">What to Expect</h3>
+      Straightforward process. Focused outcomes.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Features2 Widget — Areas of expertise ************** -->
+
+  <Features2
+    title="Areas of Deep Expertise"
+    subtitle="Where the forecast confidence framework creates the most immediate, measurable impact."
+    tagline="Expertise"
+    columns={3}
+    items={[
+      {
+        title: 'Ensemble Interpretation',
+        description:
+          'Extracting actionable signal from model spread, disagreement, and probabilistic output rather than defaulting to a single deterministic forecast.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Prediction Markets',
+        description:
+          'Applying meteorological confidence principles to weather-based market instruments, where small probability edges translate directly into outcomes.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Winter Operations',
+        description:
+          'Forecast confidence for snow removal, road treatment, and municipal planning — where the cost of being wrong is high and model spread tells a more honest story than any single deterministic output.',
+        icon: 'tabler:snowflake',
+      },
+      {
+        title: 'Energy & Utilities',
+        description:
+          'Demand forecasting, renewable integration, and grid management under uncertainty — where the tails of the distribution matter as much as the mean.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'AI Forecast Models',
+        description:
+          'Navigating the full model landscape — ECMWF, GFS, HRRR, RRFS, GraphCast, Pangu, and many other forecast models — knowing when to trust each, when to blend them, and where each falls short.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Weather Product Strategy',
+        description:
+          'Positioning, messaging, and go-to-market for weather-dependent products — built for audiences that range from meteorologists to CFOs.',
+        icon: 'tabler:presentation',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start a Conversation',
+        href: '/contact',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+    title="Interested? Let's start with a conversation."
+    subtitle="No intake form, no formal process. Just reach out and tell me what you're working on."
+  />
+</Layout>

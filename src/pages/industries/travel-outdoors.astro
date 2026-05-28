@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Travel & Outdoors — Aetheris',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Industries"
+    title="Travel & Outdoors"
+    subtitle="A forecast isn't a decision. Whether you're planning a summit attempt, managing a tour operation, or building a product for outdoor enthusiasts — the question isn't what the model says. It's how much to trust it."
+    actions={[{ variant: 'primary', text: "Let's Talk", href: '/contact', icon: 'tabler:arrow-right' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Outdoor adventure and travel',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="The Challenge"
+    title="Outdoor Decisions Are Binary. Forecast Uncertainty Isn't."
+    items={[
+      {
+        title: 'Go/No-Go Is a High-Stakes Call',
+        description:
+          'A summit attempt, a multi-day backcountry trip, a guided tour with paying clients — these are commitments made days in advance based on a forecast that may be highly reliable or highly uncertain. Most weather apps don\'t tell you which.',
+      },
+      {
+        title: 'Terrain Amplifies Forecast Error',
+        description:
+          'Mountain weather is notoriously difficult to forecast. Complex terrain creates local effects that global and even regional models resolve poorly. Model spread in mountain environments tends to be wider than in flat terrain — and the consequences of being wrong are higher.',
+      },
+      {
+        title: 'Consumer Forecasts Hide the Uncertainty',
+        description:
+          'Most consumer weather apps show a single number — "40% chance of rain." That number collapses a genuine probability distribution into a point estimate without communicating whether the models are in strong agreement or fundamentally divided on the outcome.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Mountain and outdoor planning',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why forecast confidence matters in the outdoors</h3>
+      An experienced mountaineer doesn't just ask "what's the forecast?" They ask "how confident are we in this forecast?" — and they know that question changes the decision. That's the instinct behind the Aetheris framework, made systematic.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features
+    tagline="How Aetheris Helps"
+    title="From Ensemble Spread to Go/No-Go"
+    subtitle="We translate meteorological forecast confidence into the decision language that outdoor operators, guides, and product builders actually need."
+    items={[
+      {
+        title: 'Confidence-Rated Trip Forecasts',
+        description:
+          'Beyond a point forecast — we provide ensemble-based assessments that communicate both what the models say and how much agreement exists. High confidence forecasts support commitment. Low confidence forecasts call for contingency planning.',
+        icon: 'tabler:mountain',
+      },
+      {
+        title: 'Decision Window Identification',
+        description:
+          'We identify the forecast horizon at which confidence typically reaches the threshold for a reliable go/no-go decision for your specific activity and geography — so you know when to commit and when to wait for more data.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Mountain & Complex Terrain Expertise',
+        description:
+          'Forecasting in complex terrain requires understanding how global and regional models handle orographic effects — where they\'re reliable, where they systematically fail, and how to adjust for known biases in your specific range or region.',
+        icon: 'tabler:topology-complex',
+      },
+      {
+        title: 'Multi-Day Window Assessment',
+        description:
+          'Extended trips require confidence across a multi-day window, not just a single day. We assess ensemble consistency across the full duration — identifying where confidence is solid and where the forecast is genuinely uncertain.',
+        icon: 'tabler:calendar-week',
+      },
+      {
+        title: 'Product Design for Uncertainty Communication',
+        description:
+          'For companies building outdoor or travel weather products — we help design the UX and data pipeline that communicates forecast confidence honestly. Products that say "we don\'t know" when they don\'t know build more trust than ones that fake it.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Guided Tour & Expedition Planning',
+        description:
+          'For commercial operators managing client expectations and safety obligations, forecast confidence frameworks support better pre-trip communication, more defensible go/no-go calls, and clearer contingency plans.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Mountaineering & Alpine',
+        description:
+          'Summit windows, storm system tracking, and wind assessment for high-altitude objectives — where forecast confidence directly determines whether a go decision is sound.',
+      },
+      {
+        title: 'Backcountry & Avalanche Terrain',
+        description:
+          'Precipitation type, wind loading, and temperature trend forecasts in avalanche terrain carry safety implications. Ensemble confidence in these variables is operationally critical.',
+      },
+      {
+        title: 'Guided & Commercial Operations',
+        description:
+          'Tour operators, guide services, and outdoor event organizers managing client commitments and refund policies benefit from confidence-framed forecasts that support proactive communication.',
+      },
+      {
+        title: 'Weather Product Builders',
+        description:
+          'Startups and developers building outdoor and travel weather products — we help design forecast confidence communication that differentiates on honesty and accuracy rather than false precision.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1478827387698-1527781a4887?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Outdoor adventure planning',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Who We Work With</h3>
+      From individual expedition planners to commercial operators and weather product builders — the common need is the same: a framework for acting confidently when forecasts are reliable and cautiously when they're not.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Start a Conversation', href: '/contact', icon: 'tabler:arrow-right' }]}
+    title="Better forecast confidence. Better outdoor decisions."
+    subtitle="Whether you're planning an expedition or building a product for outdoor enthusiasts — let's talk about making uncertainty work for you."
+  />
+</Layout>

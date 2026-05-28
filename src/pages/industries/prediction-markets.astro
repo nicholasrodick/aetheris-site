@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Prediction Markets — Aetheris',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Industries"
+    title="Prediction Markets"
+    subtitle="Weather prediction markets reward probability edges — not just directional calls. The teams that win consistently aren't the ones with the best model. They're the ones who know when any model is worth trusting."
+    actions={[{ variant: 'primary', text: "Let's Talk", href: '/contact', icon: 'tabler:arrow-right' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Prediction markets and data',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="The Challenge"
+    title="Markets Price the Consensus Forecast. The Edge Is in the Uncertainty."
+    items={[
+      {
+        title: 'Consensus Gets Priced In Fast',
+        description:
+          'When ECMWF, GFS, HRRR, RRFS, and other models agree on an outcome, that signal reaches the market quickly. The consensus forecast is already in the price. The edge lives in understanding when that consensus is fragile — and when it isn\'t.',
+      },
+      {
+        title: 'Models Disagree Most When It Matters Most',
+        description:
+          'High-stakes weather events — the cold snaps, the storm tracks, the late-season pattern breaks — are exactly the situations where ensemble spread is widest and model skill is most conditional. That\'s where mispricing happens.',
+      },
+      {
+        title: 'Probability Edges Compound',
+        description:
+          'In prediction markets, you don\'t need to be right every time. You need to be right more often than the market implies. A systematic forecast confidence framework — applied consistently — generates those edges over time.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Market data and analysis',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Where the market misprices weather</h3>
+      Market participants tend to anchor on the most prominent model output. When that model is operating in a low-skill regime — and most participants don't know it — the market price doesn't reflect the true probability distribution.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features
+    tagline="How Aetheris Helps"
+    title="Connecting Forecast Confidence to Market Edge"
+    subtitle="The Aetheris framework applies meteorological confidence principles directly to the questions prediction market participants actually face."
+    items={[
+      {
+        title: 'Ensemble Spread as a Mispricing Signal',
+        description:
+          'When ensemble spread is high and market prices reflect a tight probability distribution, there\'s a structural mismatch. We identify those gaps — where the atmosphere is more uncertain than the market price implies.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Conditional Model Skill Mapping',
+        description:
+          'Different models perform differently in different pattern types. We map conditional skill to the current regime — so you know which models to weight and which to discount before markets open.',
+        icon: 'tabler:adjustments-horizontal',
+      },
+      {
+        title: 'Forecast Evolution Tracking',
+        description:
+          'A forecast that has been stable across six model cycles is categorically different from one lurching back and forth. Stability signals confidence. We track forecast evolution as a real-time input to position sizing.',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'High-Confidence Event Identification',
+        description:
+          'Not every market is worth taking a position on. We help identify which events have the atmospheric setup for reliable forecasting — and which are genuinely coin-flip situations where the market price is fair.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Regime-Aware Probability Calibration',
+        description:
+          'Raw model probabilities are not well-calibrated across all weather regimes. We apply historical verification data to adjust model output probabilities to actual observed frequencies in comparable patterns.',
+        icon: 'tabler:math-function',
+      },
+      {
+        title: 'Decision Framework Design',
+        description:
+          'Beyond individual events, we help build repeatable frameworks — entry criteria, position sizing rules tied to confidence level, and exit triggers — so forecast intelligence translates into consistent process.',
+        icon: 'tabler:checklist',
+      },
+    ]}
+  />
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Pre-Event Analysis',
+        description:
+          'Before the forecast window opens, we assess ensemble spread, model agreement, and conditional skill for the pattern type — establishing a confidence baseline before prices move.',
+      },
+      {
+        title: 'Ongoing Monitoring',
+        description:
+          'As model cycles update, we track whether the forecast is converging or diverging. Convergence into high confidence warrants conviction. Divergence signals re-evaluation.',
+      },
+      {
+        title: 'Post-Event Review',
+        description:
+          'Building a structured feedback loop — comparing forecast confidence assessments against outcomes — is how the edge compounds over time. We help design and maintain that process.',
+      },
+      {
+        title: 'Custom Research',
+        description:
+          'Specific markets, specific geographies, specific season types. We conduct bespoke research into historical model performance for the exact situations your book is exposed to.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Analysis and research',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">What an Engagement Looks Like</h3>
+      Most prediction market clients start with a scoped research project — mapping model performance for their specific market exposures — and build from there.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Start a Conversation', href: '/contact', icon: 'tabler:arrow-right' }]}
+    title="Ready to turn forecast confidence into market edge?"
+    subtitle="Let's talk about your specific exposures and what a structured confidence framework could unlock."
+  />
+</Layout>

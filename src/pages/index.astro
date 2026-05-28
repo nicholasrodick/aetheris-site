@@ -1,0 +1,351 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Aetheris — Weather Intelligence & Decision Consulting',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Work With Me',
+        href: '/contact',
+        icon: 'tabler:arrow-right',
+      },
+      { text: 'See My Services', href: '/services' },
+    ]}
+  >
+    <Fragment slot="title">
+      The Weather Problem Isn't Accuracy Anymore.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Models are everywhere — ECMWF, GFS, HRRR, RRFS, GraphCast, Pangu, and many more. The data has never been better. The challenge now is knowing how to use it. Aetheris helps weather startups and decision-makers turn model overload into confident action.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note
+    title="Aetheris:"
+    description="Where weather intelligence meets operational clarity."
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="services"
+    tagline="What I Do"
+    title="Turning Data Overload into Competitive Advantage"
+    subtitle="The era of single-model thinking is over. I help you navigate the full stack — from ensemble spread to executive decision — and build products that make uncertainty work for you."
+    items={[
+      {
+        title: 'Forecast Confidence Framework',
+        description:
+          'I apply meteorological principles of ensemble spread, model agreement, and conditional skill to extract signal from the noise of competing model outputs.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Product Consulting for Weather Startups',
+        description:
+          'From pre-seed to Series A, I help weather tech founders translate cool technology into something customers understand, need, and buy.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Go-to-Market Strategy',
+        description:
+          'I bridge the gap between meteorological credibility and commercial traction — positioning, messaging, and sales enablement for a technically complex product.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Decision Support Design',
+        description:
+          'I help non-weather organizations build internal frameworks for acting under meteorological uncertainty — from supply chain to financial risk.',
+        icon: 'tabler:topology-star',
+      },
+      {
+        title: 'Hands-On Product Work',
+        description:
+          'I embed in your team to scope, build, and validate weather-intelligent features — from data architecture to UX.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Thought Leadership & Advisory',
+        description:
+          'Need a credible voice in the room? I advise leadership teams as a technical sounding board at the intersection of weather science and business strategy.',
+        icon: 'tabler:messages',
+      },
+    ]}
+  />
+
+  <!-- Content Widget — The Thesis **************** -->
+
+  <Content
+    isReversed
+    tagline="The Thesis"
+    title="Everyone Has More Data. Almost Nobody Knows What to Do With It."
+    items={[
+      {
+        title: 'Models Are Commoditized',
+        description:
+          'Access to ECMWF, GFS, HRRR, RRFS, GraphCast, and a rapidly expanding field of other forecast models is no longer a competitive advantage. The infrastructure barrier is gone. Everyone has the data.',
+      },
+      {
+        title: 'Volume Creates Confusion — Not Clarity',
+        description:
+          'When ECMWF, GFS, HRRR, RRFS, GraphCast, and many other models all say something different, most teams freeze, average blindly, or default to whoever sounds most confident. None of those is a decision framework.',
+      },
+      {
+        title: 'Forecast Confidence Is the Systematic Way Through',
+        description:
+          'The foundations of forecast confidence — ensemble spread, historical skill, conditional model accuracy, and cross-model agreement — exist precisely to answer the question: how much should I trust this forecast right now? That is the edge.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504608524841-42523fc932a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Weather data visualization',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The four foundations of forecast confidence</h3>
+      <strong>Ensemble spread</strong> — how much model members agree on an outcome. <strong>Historical skill</strong> — how each model has verified in comparable patterns. <strong>Conditional accuracy</strong> — which models perform best for this pattern type, lead time, and geography. <strong>Cross-model agreement</strong> — whether independent systems are converging or diverging. Together, these foundations answer the only question that matters: how much to trust the forecast in front of you.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget — Who I Work With **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Early-Stage Weather Startups',
+        description:
+          'You have a technology and a thesis. You need help turning it into a product someone will pay for and a story someone will fund.',
+      },
+      {
+        title: 'Growth-Stage Companies',
+        description:
+          'Your product works. Now you need to scale distribution, sharpen positioning, or navigate a new vertical.',
+      },
+      {
+        title: 'Non-Weather Organizations',
+        description:
+          'Operations, finance, or strategy teams with significant weather exposure but no meteorological expertise in-house.',
+      },
+      {
+        title: 'Open to Interesting Problems',
+        description:
+          "If you're working on something compelling at the intersection of weather science and real-world decisions, I'm interested.",
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-4.0.3&auto=format&fit=crop&w=2002&q=80',
+      alt: 'Collaboration and strategy',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Who I Work With</h3>
+      Pre-seed to Series A, and decision-makers in between.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="How We Work Together"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Reach Out</span>',
+        description:
+          "Send a message through the contact page. No pitch deck required — just tell me what you're working on.",
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Discovery Call</span>',
+        description:
+          'We spend 30–45 minutes mapping your problem, your data landscape, and what success looks like for you.',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Scoping</span>',
+        description:
+          'If there\'s a fit, I put together a focused proposal: objectives, approach, timeline, and what you\'ll walk away with.',
+        icon: 'tabler:file-description',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Engagement</span>',
+        description:
+          'We work together — hands-on or advisory, depending on what you need. Focused, time-boxed, results-oriented.',
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Working together',
+    }}
+  />
+
+  <!-- Features2 Widget — Where it matters ************** -->
+
+  <Features2
+    title="Where Uncertainty Interpretation Creates Value"
+    subtitle="Weather intelligence isn't one-size-fits-all. Here's where the forecast confidence framework makes the biggest impact."
+    tagline="Use Cases"
+    items={[
+      {
+        title: 'Prediction Markets',
+        description:
+          'Applying model spread and confidence signals to weather-based market instruments, where small probability edges matter most.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Snow & Winter Operations',
+        description:
+          'Helping municipalities and contractors plan based on model agreement and ensemble spread — not a single deterministic forecast.',
+        icon: 'tabler:snowflake',
+      },
+      {
+        title: 'Energy & Utilities',
+        description:
+          'Demand forecasting, grid management, and renewable integration under uncertainty — where the tails matter as much as the mean.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Commodity Trading',
+        description:
+          'Weather exposure in agricultural, energy, and freight markets quantified through ensemble-based risk frameworks.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: 'Travel & Outdoors',
+        description:
+          'Translating ensemble spread into actionable go/no-go decisions for time-sensitive outdoor activities and trip planning.',
+        icon: 'tabler:mountain',
+      },
+      {
+        title: 'Insurance & Parametric Risk',
+        description:
+          'Designing confidence-aware triggers and pricing structures for weather-linked financial products.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Logistics & Route Planning',
+        description:
+          'Proactive weather-risk management in transportation using model agreement as an early warning signal.',
+        icon: 'tabler:truck',
+      },
+      {
+        title: 'Consumer Weather Products',
+        description:
+          "Helping startups communicate uncertainty honestly and usefully — building products that earn trust by being right about what they don't know.",
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Research & Academia',
+        description:
+          'Bridging meteorological research and applied business context for institutions at the frontier of forecast development.',
+        icon: 'tabler:microscope',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Blog Widget ******* -->
+
+  <BlogLatestPosts
+    title="From the Blog"
+    information={`Deep dives on uncertainty interpretation, forecast confidence, and what the model explosion means for real-world decisions. Plus live commentary on major weather events and market moves.`}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Common Questions"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What exactly does Aetheris do?',
+        description:
+          'I help weather startups build better products and go-to-market strategies, and help non-weather organizations make smarter decisions under meteorological uncertainty. The common thread is applying forecast confidence science to turn data overload into clear action.',
+      },
+      {
+        title: 'Who is the right client for Aetheris?',
+        description:
+          "Weather tech founders at pre-seed to Series A, operations and strategy teams with significant weather exposure, and anyone building products or decisions around meteorological data. If you're not sure if you fit, just reach out — I'll tell you honestly.",
+      },
+      {
+        title: "What's the engagement model?",
+        description:
+          'It depends on what you need. I take on hands-on product work, go-to-market advisory, and pure consulting engagements. See the Services page for more detail, or reach out to discuss your specific situation.',
+      },
+      {
+        title: 'Do you have a weather dashboard?',
+        description:
+          "It's in development. The initial focus is prediction markets, snow removal operations, and energy/utilities. I'll be writing about it on the blog as it takes shape — and eventually it'll live here on the site.",
+      },
+      {
+        title: 'How do I get started?',
+        description:
+          "Use the contact form or email me directly. No pitch deck, no formal intake — just tell me what you're working on and we'll go from there.",
+      },
+      {
+        title: 'Why is forecast confidence better than just using the best model?',
+        description:
+          'Because no model is always best. Skill is conditional — GFS outperforms ECMWF in certain regimes, HRRR and RRFS excel at convective timing and short-range mesoscale detail, GraphCast leads at certain medium-range leads — and many other models each carry their own conditional skill profile. Forecast confidence frameworks let you weight and combine models systematically, extracting more signal from the same data.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: "Let's Talk",
+        href: '/contact',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      The forecast data is already there.<br class="block sm:hidden" /><span class="sm:whitespace-nowrap"> Let's help you use it.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Book a discovery call and explore what better uncertainty interpretation could unlock for your organization.
+    </Fragment>
+  </CallToAction>
+</Layout>

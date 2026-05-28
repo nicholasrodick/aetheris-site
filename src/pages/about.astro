@@ -1,0 +1,237 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'About — Aetheris',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="About"
+    image={{
+      src: 'https://images.unsplash.com/photo-1504608524841-42523fc932a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Weather systems and data',
+    }}
+  >
+    <Fragment slot="title">
+      The forecast isn't the answer.<br />
+      <span class="text-accent dark:text-white">Knowing how to use it is.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Aetheris is an independent weather intelligence and decision analytics platform founded by Nicholas Rodick — a meteorology and weather technology professional based in New York. The core premise: the value in weather has shifted from who has the most accurate model to who can best interpret uncertainty and act on it. Helping weather-sensitive industries — energy trading, agriculture, logistics, and infrastructure — translate model spread, forecast confidence, and conditional skill into operational decisions.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget — Nick's photo and bio **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Meteorologist & Weather Technology Professional',
+        description:
+          'Nicholas Rodick is the founder of Aetheris, based in New York. His career spans numerical weather prediction, ensemble forecasting, weather product strategy, high-performance computing, and space-based environmental intelligence.',
+      },
+      {
+        title: 'Career Highlights',
+        description:
+          'Roles at TruWeather Solutions, TempoQuest, Spire Global, and Climavision — across product management, sales engineering, customer success, and business development.',
+      },
+      {
+        title: 'The Mission',
+        description:
+          'Moving the bottleneck in weather intelligence from data access to decision confidence — combining scientific rigor with a focus on interpretability and real-world application.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/nick-rodick.jpg',
+      alt: 'Nicholas Rodick — Founder, Aetheris',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Nicholas Rodick</h3>
+      Founder, Aetheris
+    </Fragment>
+  </Content>
+
+  <!-- Features3 Widget — Foundation ************** -->
+
+  <Features3
+    title="What Aetheris Is Built On"
+    subtitle="Built on a foundation of numerical weather prediction, ensemble analysis, and emerging atmospheric technology, Aetheris helps weather-sensitive industries translate model spread, forecast confidence, and conditional skill into operational decisions."
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Numerical Weather Prediction',
+        description:
+          'Deep familiarity with how NWP models are constructed, where their skill concentrates, and — critically — where it breaks down and why.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Ensemble Analysis',
+        description:
+          'Reading model spread, ensemble agreement, and probabilistic output to extract signal from the noise of competing forecasts rather than defaulting to any single model.',
+        icon: 'tabler:adjustments-horizontal',
+      },
+      {
+        title: 'Emerging Atmospheric Technology',
+        description:
+          'From HRRR, RRFS, and AI-native forecasting (GraphCast, Pangu, FourCastNet, and many others) to space-based environmental intelligence — tracking what is genuinely advancing the science versus what is noise.',
+        icon: 'tabler:satellite',
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget — Career background ************** -->
+
+  <Features3
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'TruWeather Solutions',
+        description:
+          'Applied atmospheric modeling and forecast communication for aviation and complex operational environments — where weather decisions carry direct safety and cost consequences.',
+        icon: 'tabler:plane',
+      },
+      {
+        title: 'TempoQuest',
+        description:
+          'Worked at the intersection of high-performance computing and weather modeling, helping push the performance boundaries of operational NWP on modern hardware architectures.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Spire Global',
+        description:
+          'Satellite-derived environmental intelligence — bringing space-based data into operational weather and maritime applications across energy, aviation, and infrastructure.',
+        icon: 'tabler:satellite',
+      },
+      {
+        title: 'Climavision',
+        description:
+          'Built high-resolution forecast model data pipelines for utility clients and worked on forecast-of-a-forecast products — delivering ensemble guidance to hedge funds faster than standard operational runs, enabling earlier positioning on weather-driven market moves.',
+        icon: 'tabler:storm',
+      },
+      {
+        title: 'Cross-Functional Roles',
+        description:
+          'Product management, sales engineering, customer success, and business development — experience on every side of the table between weather technology and the organizations that use it.',
+        icon: 'tabler:arrows-transfer-down',
+      },
+      {
+        title: 'Industries Served',
+        description:
+          'Energy trading, aviation, agriculture, logistics, infrastructure, and severe weather operations — where forecast quality and decision confidence translate directly into operational and financial outcomes.',
+        icon: 'tabler:building-skyscraper',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Atmospheric data',
+    }}
+  />
+
+  <!-- Steps2 Widget — The Aim ****************** -->
+
+  <Steps2
+    title="What Aetheris Is Trying to Do"
+    subtitle="By combining scientific rigor with modern technology and a focus on interpretability, Aetheris aims to make complex atmospheric information more accessible and operationally valuable — moving the bottleneck from data access to decision confidence."
+    items={[
+      {
+        title: 'Scientific Rigor',
+        description:
+          "The atmosphere doesn't bend to commercial pressure. Every recommendation is grounded in meteorological science — ensemble theory, conditional skill, forecast verification — not simplified talking points.",
+      },
+      {
+        title: 'Interpretability Over Volume',
+        description:
+          'More data is not the answer. The bottleneck for most organizations is not access to models — it is understanding what the models are actually saying and what to do when they disagree.',
+      },
+      {
+        title: 'Operational Focus',
+        description:
+          'Weather intelligence only creates value when it reaches the people who need it and they can act on it. Every engagement keeps the operational decision — not the forecast itself — as the end goal.',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget — The Dashboard ****************** -->
+
+  <Steps2
+    title="What's Being Built"
+    subtitle="Beyond consulting, Aetheris is developing an interactive weather intelligence dashboard that demonstrates how to navigate model uncertainty in real time — starting with the use cases where ensemble confidence matters most."
+    isReversed={true}
+    callToAction={{
+      text: 'Follow along on the blog',
+      href: '/blog',
+    }}
+    items={[
+      {
+        title: 'Prediction Markets',
+        description:
+          'Applying ensemble confidence signals to weather-based prediction markets, where small probability edges translate directly into outcomes.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Snow & Winter Operations',
+        description:
+          'Helping private contractors and operators plan based on model spread rather than a single deterministic forecast — where the difference between 2" and 8" changes everything.',
+        icon: 'tabler:snowflake',
+      },
+      {
+        title: 'Energy & Utilities',
+        description:
+          'Demand forecasting and grid management under uncertainty, where ensemble tails — not just the mean forecast — should shape operational decisions.',
+        icon: 'tabler:bolt',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget — Personal ************** -->
+
+  <Features2
+    title="Outside of Meteorology"
+    tagline="Nick Rodick"
+    columns={2}
+    items={[
+      {
+        title: 'New York & the Adirondacks',
+        description:
+          'When not in the models, Nick hikes throughout New York and the Adirondacks with Nimbus, his silver Labrador Retriever — a region whose weather is rarely simple and whose terrain makes forecast confidence a very practical matter.',
+        icon: 'tabler:mountain',
+      },
+      {
+        title: 'The Future of the Field',
+        description:
+          'A sustained interest in where atmospheric science, computing, and environmental intelligence are heading — and what it means for how weather creates value over the next decade.',
+        icon: 'tabler:atom',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in Touch',
+        href: '/contact',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+    title="Interested in working together?"
+    subtitle="First conversations are always exploratory. Tell me what you're building or struggling with and we'll see if there's a fit."
+  />
+</Layout>

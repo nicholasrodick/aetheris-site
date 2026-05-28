@@ -1,0 +1,74 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact — Aetheris',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Let's Talk" />
+
+  <ContactUs
+    id="form"
+    title="Tell me what you're working on"
+    subtitle="Whether you're a founder, an operator, or just someone with a weather problem worth solving — drop me a message. I read everything and respond within a business day."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'What are you working on?',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this form, you agree to the collection of your information for the purpose of responding to your inquiry.',
+    }}
+    description="I personally respond to every message, typically within one business day."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="What to Expect"
+    items={[
+      {
+        title: 'No pitch deck required',
+        description:
+          "Just tell me what you're building or struggling with. I'll tell you honestly whether I can help — and if I can't, I'll often point you toward someone who can.",
+        icon: 'tabler:file-off',
+      },
+      {
+        title: 'Exploratory first',
+        description:
+          'First conversations are always a no-pressure discovery call. We explore the problem, see if there is a fit, and go from there. No commitment required.',
+        icon: 'tabler:coffee',
+      },
+      {
+        title: 'Quick response',
+        description:
+          'I personally read and respond to every message. Typically within one business day — sometimes faster.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Open to interesting problems',
+        description:
+          "If you're unsure whether your situation fits — reach out anyway. The worst outcome is I tell you it's not a match. That takes five minutes.",
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+</Layout>

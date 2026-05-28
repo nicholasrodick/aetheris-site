@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Snow & Winter Operations — Aetheris',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Industries"
+    title="Snow & Winter Operations"
+    subtitle="Private snow removal is a margin business. You win or lose on staging decisions made 48–72 hours out — exactly when ECMWF, GFS, HRRR, RRFS, and many other forecast models disagree most. Forecast confidence is the difference between a profitable season and an expensive one."
+    actions={[{ variant: 'primary', text: "Let's Talk", href: '/contact', icon: 'tabler:arrow-right' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1547245324-d777c6f05e80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Winter operations and snow removal',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="The Challenge"
+    title="The Cost Asymmetry Is Real. The Forecast Uncertainty Is Too."
+    items={[
+      {
+        title: 'Fixed-Price Contracts Punish Both Errors',
+        description:
+          'Over-deploy and you eat the labor and material cost. Under-deploy and you face SLA penalties, client churn, and liability exposure. Neither error is acceptable — and both are driven by misreading what the models are actually saying.',
+      },
+      {
+        title: 'Models Disagree Most on the Events That Matter Most',
+        description:
+          'The storms that swing your season — the 4-to-8 inch borderline events, the mixed rain/snow transitions, the late-season cold intrusions — are exactly where ECMWF, GFS, HRRR, RRFS, and many other forecast models produce their widest spread.',
+      },
+      {
+        title: 'A Point Forecast Is the Wrong Tool for a Margin Business',
+        description:
+          '"6 inches expected" collapses a distribution that may run from 2 to 12 inches into false precision. Your staging decision should reflect the full ensemble range — not the mean of a set of models that fundamentally disagree.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1612208695882-02f2322b7fee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Snow operations planning',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why forecast confidence is a competitive advantage in private snow removal</h3>
+      Most contractors are working from the same publicly available model output. The ones who build systematic confidence frameworks — who stage based on ensemble range, not point forecasts — make better decisions on the events that matter and protect their margins across the season.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features
+    tagline="How Aetheris Helps"
+    title="The Foundations of Forecast Confidence — Applied to Winter Operations"
+    subtitle="The same meteorological principles that define forecast confidence in any context apply directly to snow removal decision-making. We make those principles operational."
+    items={[
+      {
+        title: 'Ensemble Spread → Operational Range',
+        description:
+          'When ensemble members are tight, confidence is high — commit your fleet. When spread is wide across ECMWF, GFS, HRRR, RRFS, and other models, we translate that range into a staged posture: baseline deployment with reserves ready to flex.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Model Agreement as a Staging Trigger',
+        description:
+          'Cross-model agreement is a core foundation of forecast confidence. When ECMWF, GFS, HRRR, RRFS, and other models converge at 48 hours, that convergence is a commit signal. Divergence is a hold signal. We build that logic into your decision framework.',
+        icon: 'tabler:git-merge',
+      },
+      {
+        title: 'Conditional Skill for Winter Patterns',
+        description:
+          'HRRR and RRFS — the NAM replacement — have better timing skill for convective snow bands and mesoscale precipitation features. ECMWF leads on synoptic track. RRFS brings improved precipitation phase guidance near the rain/snow line. Knowing which model to weight in which situation is applied forecast confidence.',
+        icon: 'tabler:adjustments-horizontal',
+      },
+      {
+        title: 'Precipitation Phase Confidence',
+        description:
+          'Rain/snow/sleet transitions are the hardest forecasts in operational meteorology. We assess ensemble agreement on precipitation phase specifically — the variable that most often turns a manageable event into an operational and liability crisis.',
+        icon: 'tabler:snowflake',
+      },
+      {
+        title: 'Forecast Evolution Monitoring',
+        description:
+          'A solution stable across six model cycles carries more conviction than one that just emerged. We track forecast stability as a confidence signal — flagging when a high-spread setup is converging versus when it remains genuinely uncertain.',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'Confidence-Tiered Decision Protocols',
+        description:
+          'Explicit playbooks tied to confidence thresholds — so when an event approaches, the question isn\'t "who do we believe?" but "which confidence tier are we in, and what does our protocol say?" Removes judgment under time pressure.',
+        icon: 'tabler:checklist',
+      },
+    ]}
+  />
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Private Contractors',
+        description:
+          'Fleet staging, material pre-positioning, and crew scheduling decisions all benefit from confidence-tiered protocols. We help design and calibrate those frameworks for your contract structure and service geography.',
+      },
+      {
+        title: 'Facilities & Property Management',
+        description:
+          'Commercial property operators, campus facilities teams, and HOA managers with liability exposure need decisions that are operationally sound and defensible. Forecast confidence frameworks provide both.',
+      },
+      {
+        title: 'Retail & Commercial Site Operators',
+        description:
+          'High-foot-traffic commercial sites — retail centers, logistics hubs, parking operations — where the cost of a slip-and-fall far exceeds the cost of salt and labor. Confidence-based pre-treatment decisions protect against that asymmetry.',
+      },
+      {
+        title: 'Aviation Ground & Ramp Operations',
+        description:
+          'De-icing fluid allocation, ramp staffing, and ground hold posture are highly sensitive to accumulation rate and precipitation phase uncertainty — exactly where HRRR and RRFS confidence matters most.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Private winter operations',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Who We Work With</h3>
+      Private operators for whom winter weather is a direct margin risk — from snow removal contractors managing fixed-price contracts to facilities teams protecting against liability exposure.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Start a Conversation', href: '/contact', icon: 'tabler:arrow-right' }]}
+    title="The ensemble is already telling you something your competitors aren't hearing."
+    subtitle="Let's build a forecast confidence framework that protects your margins across the season."
+  />
+</Layout>

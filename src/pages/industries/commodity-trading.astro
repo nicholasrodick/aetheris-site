@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Commodity Trading — Aetheris',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Industries"
+    title="Commodity Trading"
+    subtitle="Weather drives commodity prices. But the traders who consistently outperform aren't the ones with the most model access — they're the ones who know when the models are reliable and when they're not."
+    actions={[{ variant: 'primary', text: "Let's Talk", href: '/contact', icon: 'tabler:arrow-right' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Commodity trading and markets',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="The Challenge"
+    title="Model Access Is Commoditized. Forecast Intelligence Isn't."
+    items={[
+      {
+        title: 'Everyone Sees the Same Models',
+        description:
+          'ECMWF, GFS, HRRR, RRFS, and a rapidly growing number of other forecast model outputs are broadly accessible. If your weather-driven trade thesis is based purely on what the consensus model says, the edge is already priced in by the time you act.',
+      },
+      {
+        title: 'Model Disagreement Creates Volatility — and Opportunity',
+        description:
+          'When models diverge on a weather outcome, market prices often anchor to one signal while ignoring the others. That mispricing is where opportunities live — but only if you can read which model is more likely right in the current regime.',
+      },
+      {
+        title: 'Weather Exposure Varies Across Commodity Classes',
+        description:
+          'Natural gas demand, corn yield, cotton production, orange juice prices — each has a different weather sensitivity profile, a different critical window, and a different set of models and variables that matter most.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Market trading screens',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The forecast confidence edge in commodity markets</h3>
+      Commodity weather trading is not just about having a forecast. It's about understanding forecast confidence well enough to size positions appropriately — larger when models agree and the pattern is historically reliable, smaller when spread is high and the atmosphere is in a sensitive state.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features
+    tagline="How Aetheris Helps"
+    title="Connecting Forecast Confidence to Trading Decisions"
+    subtitle="We help commodity traders apply meteorological confidence principles to identify when weather-driven theses are high-conviction and when they deserve smaller sizing."
+    items={[
+      {
+        title: 'Regime-Conditional Model Skill Assessment',
+        description:
+          'For your specific commodity and critical weather window, we map which models have historically performed best and under what pattern conditions — so you know which signal to weight when models diverge.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Ensemble Divergence as Volatility Signal',
+        description:
+          'High ensemble spread often precedes outsized price moves. When the atmosphere is genuinely uncertain, commodity markets frequently underprice that uncertainty. We help identify and quantify those situations.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Critical Window Analysis',
+        description:
+          'Each commodity has specific weather windows that drive the most price sensitivity — corn pollination, winter natural gas demand, cotton boll development. We focus ensemble analysis on those windows specifically.',
+        icon: 'tabler:calendar-event',
+      },
+      {
+        title: 'Forecast Stability Monitoring',
+        description:
+          'A forecast that has held stable across multiple model cycles carries more conviction than a new solution that just emerged. We monitor forecast evolution to distinguish high-stability from high-volatility setups.',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'Position Sizing Framework',
+        description:
+          'Confidence-tiered position sizing — larger exposure when models agree and conditional skill is high, reduced exposure when spread is elevated — is a systematic way to embed forecast intelligence into risk management.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: 'Cross-Commodity Weather Correlation',
+        description:
+          'Some weather patterns drive simultaneous exposure across multiple commodity classes. We identify those correlation structures and their implications for portfolio-level weather risk.',
+        icon: 'tabler:arrows-transfer-down',
+      },
+    ]}
+  />
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Agricultural Commodities',
+        description:
+          'Corn, soybeans, wheat, cotton, coffee, orange juice — each crop has a distinct weather sensitivity profile. We build forecast confidence frameworks around your specific commodity\'s critical growing and harvest windows.',
+      },
+      {
+        title: 'Natural Gas & Heating Fuels',
+        description:
+          'Winter temperature outlooks and summer cooling demand drive the most weather-sensitive natural gas positions. Ensemble confidence in temperature forecasts directly informs appropriate position sizing.',
+      },
+      {
+        title: 'Freight & Shipping',
+        description:
+          'Weather-driven disruptions to shipping routes, port operations, and overland freight create commodity price effects. We help quantify weather uncertainty in supply chain disruption scenarios.',
+      },
+      {
+        title: 'Soft Commodity Production Risk',
+        description:
+          'Production risk from extreme weather events — drought, flood, late frost, tropical storm — carries option-like payoff structures. We help assess the probability and severity distribution of those scenarios.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Agricultural and commodity markets',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Commodity Classes We Cover</h3>
+      From agricultural growing season analysis to energy demand forecasting — we focus our work on the specific weather variables and windows that drive your positions.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Start a Conversation', href: '/contact', icon: 'tabler:arrow-right' }]}
+    title="Your weather thesis is only as good as your forecast confidence."
+    subtitle="Let's talk about your commodity exposures and how a systematic confidence framework could sharpen your edge."
+  />
+</Layout>

@@ -1,0 +1,11 @@
+---
+import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
+---
+
+<span class="flex items-center gap-1.5 self-center">
+  <Icon name="tabler:wind" class="w-6 h-6 text-accent" />
+  <span class="text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+    {SITE?.name}
+  </span>
+</span>

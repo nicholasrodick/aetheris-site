@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Energy & Utilities — Aetheris',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Industries"
+    title="Energy & Utilities"
+    subtitle="Energy markets don't penalize you for the forecast mean. They penalize you for the tails — the cold snaps that weren't in the consensus, the demand surges that hit when model agreement was already breaking down."
+    actions={[{ variant: 'primary', text: "Let's Talk", href: '/contact', icon: 'tabler:arrow-right' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Energy grid and utilities',
+    }}
+  />
+
+  <Content
+    isReversed
+    tagline="The Challenge"
+    title="The Mean Forecast Isn't What Gets You. The Tails Are."
+    items={[
+      {
+        title: 'Demand Forecasting Lives in the Extremes',
+        description:
+          'Average temperature outlooks drive average demand. But peak load events, gas supply crunches, and grid stress scenarios are driven by the extremes — the events in the tails of the ensemble distribution that the mean forecast obscures.',
+      },
+      {
+        title: 'Renewable Integration Amplifies Uncertainty',
+        description:
+          'Wind and solar generation are inherently uncertain. When forecast uncertainty in renewable generation coincides with high demand uncertainty, the compounded risk to grid balance is far larger than either factor alone.',
+      },
+      {
+        title: 'Model Disagreement Clusters in Cold Regimes',
+        description:
+          'The temperature forecast uncertainty that matters most to energy markets — the pattern breaks, the blocking events, the polar intrusions — tends to cluster in regimes where model skill is most conditional. This is where ECMWF, GFS, HRRR, RRFS, and many other forecast models diverge most, and where ensemble spread is the critical signal.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Wind and solar energy',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Where weather uncertainty hits energy hardest</h3>
+      The 2021 Texas freeze. The 2019 polar vortex. The 2022 European energy crisis amplified by an anomalous winter. These events weren't invisible in the ensemble — the signal was there. The question is whether your organization was positioned to see and act on it.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features
+    tagline="How Aetheris Helps"
+    title="Connecting Forecast Confidence to Energy Decisions"
+    subtitle="We help energy and utility organizations read ensemble output the way it was designed to be read — as a probability distribution that should shape hedging, dispatch, and operational posture."
+    items={[
+      {
+        title: 'Probabilistic Demand Forecasting',
+        description:
+          'Moving from deterministic load forecasts to probability distributions — with explicit confidence bands tied to ensemble spread — so hedging decisions reflect actual atmospheric uncertainty rather than point estimates.',
+        icon: 'tabler:chart-area',
+      },
+      {
+        title: 'Tail Risk Identification',
+        description:
+          'The ensemble members that represent extreme outcomes are operationally meaningful even at low probability. We help identify and quantify tail scenarios — not just for disclosure, but as inputs to contingency planning.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'Renewable Generation Uncertainty',
+        description:
+          'Wind and solar forecast uncertainty quantification at the resolution your dispatch and balancing decisions require — with ensemble spread that captures the full range of plausible generation outcomes.',
+        icon: 'tabler:wind',
+      },
+      {
+        title: 'Pattern Recognition for High-Risk Regimes',
+        description:
+          'Certain synoptic patterns historically precede the most consequential energy weather events. We map current pattern analogs and flag when the setup is entering historically high-risk territory.',
+        icon: 'tabler:topology-star',
+      },
+      {
+        title: 'Hedging Band Calibration',
+        description:
+          'Hedging bands should widen when ensemble spread is high and narrow when confidence is high. We help calibrate dynamic hedging approaches tied to forecast confidence state rather than fixed seasonal bands.',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'Extended Range Outlook Assessment',
+        description:
+          'Week 2 and beyond is where energy market positioning decisions are made. We assess extended range forecast reliability — when to trust the subseasonal signal and when the pattern is genuinely unpredictable.',
+        icon: 'tabler:calendar-stats',
+      },
+    ]}
+  />
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Utilities & Grid Operators',
+        description:
+          'Reliability mandates require planning for extremes, not just averages. We help build weather risk frameworks that satisfy both operational planning and regulatory documentation requirements.',
+      },
+      {
+        title: 'Energy Trading & Risk Management',
+        description:
+          'Gas, power, and renewable certificate traders with weather exposure benefit from confidence-calibrated forecasts that distinguish high-conviction positions from low-conviction ones.',
+      },
+      {
+        title: 'Demand-Side Management',
+        description:
+          'Demand response programs and DR aggregators need reliable advance notice of high-demand events — calibrated to the actual probability of triggering, not just the median forecast.',
+      },
+      {
+        title: 'Infrastructure & Asset Planning',
+        description:
+          'Long-term energy infrastructure decisions benefit from climate-aware weather uncertainty analysis — accounting for shifting weather regimes and their implications for asset performance.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Energy infrastructure',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Who We Work With</h3>
+      From utility operations teams managing grid reliability to energy traders managing weather-exposed positions — the common thread is that ensemble uncertainty should be driving decisions, not just disclosure.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Start a Conversation', href: '/contact', icon: 'tabler:arrow-right' }]}
+    title="Weather uncertainty is priced into your market. Is it priced into your decisions?"
+    subtitle="Let's talk about your specific weather exposure and how forecast confidence can sharpen your operational and trading posture."
+  />
+</Layout>
