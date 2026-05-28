@@ -14,6 +14,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const metadata = {
   title: 'AetherisWx — Weather Intelligence & Decision Consulting',
   ignoreTitleTemplate: true,
+  description: 'Weather intelligence consulting for founders and decision-makers. Turning model overload into confident action through forecast confidence science.',
 };
 ---
 
@@ -36,7 +37,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Better models are everywhere. The winners aren't ahead on data — they're ahead on knowing when to trust it and how to act on it.
+      Better weather forecasts are everywhere. The winners aren't ahead on data — they're ahead on knowing when to trust it and how to act on it.
     </Fragment>
   </Hero>
 
@@ -94,10 +95,9 @@ const metadata = {
     ]}
   />
 
-  <!-- Content Widget — The Thesis **************** -->
+  <!-- Features Widget — The Thesis **************** -->
 
-  <Content
-    isReversed
+  <Features
     tagline="The Thesis"
     title="Everyone Has More Data. Almost Nobody Knows What to Do With It."
     items={[
@@ -132,20 +132,15 @@ const metadata = {
         icon: 'tabler:wind',
       },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2070&q=80',
-      alt: 'Weather data visualization',
-    }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The forecast confidence pillars</h3>
+    <Fragment slot="subtitle">
       GFS, ECMWF, GraphCast, and others all perform well — and no single model dominates across all regimes. When they disagree, the bottleneck isn't data access. It's knowing which one to trust right now.
+      <span class="block mt-6 text-xl font-bold text-gray-900 dark:text-white">The forecast confidence pillars</span>
     </Fragment>
-
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Features>
 
   <!-- Content Widget — Who I Work With **************** -->
 

@@ -1,12 +1,14 @@
 ﻿---
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Services — AetherisWx',
+  description: 'Consulting, advisory, and hands-on product work for weather startups and weather-sensitive organizations. Built around forecast confidence science.',
 };
 ---
 
@@ -24,76 +26,50 @@ const metadata = {
     }}
   />
 
-  <!-- Features2 Widget — Three service areas ************** -->
+  <!-- Features Widget — What I Can Help With ************** -->
 
-  <Features2
-    title="Three Ways I Can Help"
-    subtitle="Most clients combine elements across all three. We'll figure out what makes sense for your situation during the discovery call."
-    columns={3}
+  <Features
+    title="What I Can Help With"
+    subtitle="Most engagements combine elements across several areas. We'll figure out what makes sense during the discovery call."
     items={[
       {
-        title: 'Product Consulting',
+        title: 'Forecast Confidence Framework',
         description:
-          'For weather tech founders building something new. I help you scope, validate, and build products that solve a real problem in a way customers can understand and act on. Hands-on, embedded work — not just advice from the sidelines.',
+          'I apply meteorological principles of ensemble spread, model agreement, and conditional skill to extract signal from the noise of competing model outputs.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Product Consulting for Weather Startups',
+        description:
+          'From pre-seed to Series A, I help weather tech founders translate cool technology into something customers understand, need, and buy.',
         icon: 'tabler:building',
       },
       {
         title: 'Go-to-Market Strategy',
         description:
-          "Positioning and messaging for technically complex weather products. I help you answer the question your customers are really asking: 'Why does this forecast matter to me right now?' — and build a sales motion around the answer.",
+          'I bridge the gap between meteorological credibility and commercial traction — positioning, messaging, and sales enablement for a technically complex product.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Advisory',
+        title: 'Decision Support Design',
         description:
-          'A technical sounding board for leadership teams navigating weather exposure, data strategy, or the emerging AI forecasting landscape. Structured as a retainer or on-demand depending on what fits.',
+          'I help non-weather organizations build internal frameworks for acting under meteorological uncertainty — from supply chain to financial risk.',
+        icon: 'tabler:topology-star',
+      },
+      {
+        title: 'Hands-On Product Work',
+        description:
+          'I embed in your team to scope, build, and validate weather-intelligent features — from data architecture to UX.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Thought Leadership & Advisory',
+        description:
+          'Need a credible voice in the room? I advise leadership teams as a technical sounding board at the intersection of weather science and business strategy.',
         icon: 'tabler:messages',
       },
     ]}
   />
-
-  <!-- Content Widget — Who I work with **************** -->
-
-  <Content
-    isReversed
-    tagline="Who I Work With"
-    title="Pre-Seed to Series A, and Decision-Makers in Between"
-    items={[
-      {
-        title: 'Early-Stage Weather Startups',
-        description:
-          'You have a technology and a thesis. You need help turning it into a product someone will pay for and a story someone will fund.',
-        icon: 'tabler:seedling',
-      },
-      {
-        title: 'Growth-Stage Companies',
-        description:
-          "Your product works. Now you need to scale distribution, sharpen positioning, or navigate a new market vertical — and you need a partner who understands both the science and the strategy.",
-        icon: 'tabler:trending-up',
-      },
-      {
-        title: 'Non-Weather Organizations',
-        description:
-          "Operations, finance, or strategy teams who deal with significant weather exposure but don't have meteorological expertise in-house. I translate the atmosphere into decisions your team can act on.",
-        icon: 'tabler:building-skyscraper',
-      },
-      {
-        title: 'Open to Interesting Problems',
-        description:
-          "If you're working on something compelling at the intersection of weather science and real-world decisions, I'm interested. Reach out and tell me what you're building.",
-        icon: 'tabler:bulb',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-4.0.3&auto=format&fit=crop&w=2002&q=80',
-      alt: 'Collaboration',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The right fit matters</h3>
-      I'll tell you quickly if I can help and what a realistic outcome looks like. If it's not a fit, I'll say so — and often point you toward someone who is.
-    </Fragment>
-  </Content>
 
   <!-- Content Widget — What to expect **************** -->
 
@@ -137,6 +113,49 @@ const metadata = {
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget — Who I work with **************** -->
+
+  <Content
+    isReversed
+    tagline="Who I Work With"
+    title="Pre-Seed to Series A, and Decision-Makers in Between"
+    items={[
+      {
+        title: 'Early-Stage Weather Startups',
+        description:
+          'You have a technology and a thesis. You need help turning it into a product someone will pay for and a story someone will fund.',
+        icon: 'tabler:seedling',
+      },
+      {
+        title: 'Growth-Stage Companies',
+        description:
+          "Your product works. Now you need to scale distribution, sharpen positioning, or navigate a new market vertical — and you need a partner who understands both the science and the strategy.",
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Non-Weather Organizations',
+        description:
+          "Operations, finance, or strategy teams who deal with significant weather exposure but don't have meteorological expertise in-house. I translate the atmosphere into decisions your team can act on.",
+        icon: 'tabler:building-skyscraper',
+      },
+      {
+        title: 'Open to Interesting Problems',
+        description:
+          "If you're working on something compelling at the intersection of weather science and real-world decisions, I'm interested. Reach out and tell me what you're building.",
+        icon: 'tabler:bulb',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-4.0.3&auto=format&fit=crop&w=2002&q=80',
+      alt: 'Collaboration',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The right fit matters</h3>
+      I'll tell you quickly if I can help and what a realistic outcome looks like. If it's not a fit, I'll say so — and often point you toward someone who is.
     </Fragment>
   </Content>
 
