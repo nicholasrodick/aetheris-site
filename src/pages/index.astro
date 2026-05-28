@@ -102,19 +102,34 @@ const metadata = {
     title="Everyone Has More Data. Almost Nobody Knows What to Do With It."
     items={[
       {
-        title: 'Models Are Commoditized',
-        description:
-          'Access to ECMWF, GFS, HRRR, RRFS, GraphCast, and a rapidly expanding field of other forecast models is no longer a competitive advantage. The infrastructure barrier is gone. Everyone has the data.',
+        title: 'Ensemble Spread',
+        description: 'Wide agreement is a signal; wide spread is a regime flag, not just noise.',
+        icon: 'tabler:chart-bar',
       },
       {
-        title: 'Volume Creates Confusion — Not Clarity',
-        description:
-          'When ECMWF, GFS, HRRR, RRFS, GraphCast, and many other models all say something different, most teams freeze, average blindly, or default to whoever sounds most confident. None of those is a decision framework.',
+        title: 'Conditional Model Skill',
+        description: 'Which model is best depends on pattern, geography, and lead time — not reputation.',
+        icon: 'tabler:adjustments-horizontal',
       },
       {
-        title: 'Forecast Confidence Is the Systematic Way Through',
-        description:
-          'The foundations of forecast confidence — ensemble spread, historical skill, conditional model accuracy, and cross-model agreement — exist precisely to answer the question: how much should I trust this forecast right now? That is the edge.',
+        title: 'Cross-Model Agreement',
+        description: 'Independent systems converging carries more weight than one model saying it loudly.',
+        icon: 'tabler:git-merge',
+      },
+      {
+        title: 'Initial Conditions',
+        description: 'Data-sparse regions and observation gaps degrade reliability before a model even runs.',
+        icon: 'tabler:satellite',
+      },
+      {
+        title: 'Climatological Context',
+        description: 'Historical analogs act as a physical plausibility check on model output.',
+        icon: 'tabler:calendar-stats',
+      },
+      {
+        title: 'Atmospheric Ingredients',
+        description: 'Thermodynamic and kinematic forcing provide an independent anchor for evaluating model solutions.',
+        icon: 'tabler:wind',
       },
     ]}
     image={{
@@ -124,7 +139,7 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The forecast confidence pillars</h3>
-      GFS, ECMWF, GraphCast, and others all perform well — no single model dominates across all weather regimes. That makes "most accurate model" a race to nowhere. The real bottleneck is the decision: how much should I trust this forecast right now, and what should I do with it? These pillars answer that question systematically. <strong>Ensemble spread</strong> — how much model members agree; wide spread is a regime signal, not just noise. <strong>Conditional model skill</strong> — which models have historically performed best in the current pattern type, lead time, and geography; skill is regime-dependent, not uniform. <strong>Cross-model agreement</strong> — whether independent systems are converging or diverging on the same solution. <strong>Initial conditions</strong> — the quality and completeness of the atmospheric state going into the models; observation gaps and data-sparse regions degrade downstream reliability. <strong>Climatological context</strong> — how the current setup compares to historical analogs; a physical check on whether model solutions are plausible. <strong>Atmospheric ingredients</strong> — the stability and kinematic environment; understanding thermodynamic and dynamic forcing provides an independent anchor for evaluating what the models are producing.
+      GFS, ECMWF, GraphCast, and others all perform well — and no single model dominates across all regimes. When they disagree, the bottleneck isn't data access. It's knowing which one to trust right now.
     </Fragment>
 
     <Fragment slot="bg">
@@ -323,12 +338,12 @@ const metadata = {
       {
         title: 'Why does AetherisWx exist?',
         description:
-          'Model proliferation has commoditized raw forecast accuracy. GFS, ECMWF, GraphCast, and others all perform well — no single model dominates across all weather regimes or event types. The bottleneck has shifted to decision-making under uncertainty. When a business faces a go/no-go call, a trade, or an operational trigger, the question is no longer just "what does the forecast say" — it\'s "how much should I trust it right now, and what should I do?" AetherisWx exists to answer that second question. The value is time saved and money protected: a clearer signal on when to act, not just a better forecast.',
+          'Model proliferation has commoditized raw accuracy. The new bottleneck is the decision: how much should I trust this forecast right now, and what should I do with it?',
       },
       {
         title: 'Why is forecast confidence better than just using the best model?',
         description:
-          'Because no model is always best. Skill is conditional — GFS outperforms ECMWF in certain regimes, HRRR and RRFS excel at convective timing and short-range mesoscale detail, GraphCast leads at certain medium-range leads — and many other models each carry their own conditional skill profile. Forecast confidence frameworks let you weight and combine models systematically, extracting more signal from the same data.',
+          'Because no model is always best. Skill is conditional — GFS, ECMWF, HRRR, RRFS, and GraphCast each carry their own regime-dependent skill profile. Forecast confidence frameworks let you weight and combine them systematically, extracting more signal from the same data.',
       },
     ]}
   />
